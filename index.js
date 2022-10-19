@@ -9,7 +9,56 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Hello from express" });
+  const products = [
+    {
+      id: 0,
+      image:
+        "https://storage.googleapis.com/smartqprdnz_pub/im/fi/compassevents/FP.jpg",
+      price: 550,
+      foodname: "Farmers Pick Pizza",
+      quantity: 0,
+      isVeg: true,
+    },
+    {
+      id: 1,
+      image:
+        "https://storage.googleapis.com/smartqprdnz_pub/im/fi/compassevents/Mar.jpg",
+      price: 600,
+      foodname: "Marghreita",
+      quantity: 0,
+      isVeg: true,
+    },
+    {
+      id: 2,
+      image:
+        "https://storage.googleapis.com/smartqprdnz_pub/im/fi/compassevents/CS.jpg",
+      price: 650,
+      foodname: "Chicken Supreme Pizza",
+      quantity: 0,
+      isVeg: false,
+    },
+    {
+      id: 3,
+      image:
+        "https://storage.googleapis.com/smartqprdnz_pub/im/fi/compassevents/CS.jpg",
+      price: 750,
+      foodname: "Chicken Supreme Pizza 1",
+      quantity: 0,
+      isVeg: false,
+    },
+    {
+      id: 4,
+      image:
+        "https://storage.googleapis.com/smartqprdnz_pub/im/fi/compassevents/DPS.jpg",
+      price: 750,
+      foodname: "Peppy Paneer",
+      quantity: 0,
+      isVeg: false,
+    },
+  ];
+  res.json({
+    data: products,
+  });
 });
 
 app.post("/createOrder", (req, res) => {
